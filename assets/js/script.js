@@ -120,6 +120,19 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+formBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  // open mailto
+  window.open(
+    `mailto:
+    yakov.varnaev@gmail.com
+    ?subject=${formInputs[0].value} из ${formInputs[1].value}
+    &body=${formInputs[2].value}
+    `,
+  );
+  form.reset();
+});
+
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
